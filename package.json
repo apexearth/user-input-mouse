@@ -1,7 +1,7 @@
 {
   "name": "user-input-mouse",
   "version": "0.0.1",
-  "description": "User input tracking base class.",
+  "description": "User input tracking for the mouse.",
   "main": "src/user-input-mouse.js",
   "directories": {
     "test": "test"
@@ -20,7 +20,8 @@
   },
   "keywords": [
     "user",
-    "input"
+    "input",
+    "mouse"
   ],
   "homepage": "https://github.com/apexearth/user-input-mouse#readme",
   "devDependencies": {
@@ -29,6 +30,6 @@
   },
   "dependencies": {
     "key-events": "0.0.3",
-    "user-input": "0.0.1"
+    "user-input": "0.0.2"
   }
 }
