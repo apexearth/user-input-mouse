@@ -1,11 +1,14 @@
 var util      = require("util")
-var keyboard  = require("key-events")
-var UserInput = require("user-input");
+var mouse     = require("mouse-events")
+var UserInput = require("user-input")
 
-module.exports = mouseInput
+var browser = require("./browser.js")
+
+module.exports            = mouseInput
+browser.window.mouseInput = mouseInput
 
 function mouseInput(target) {
-    return new MouseInput(keyboard(target))
+    return new MouseInput(mouse(target))
 }
 
 function MouseInput(input) {
@@ -21,7 +24,7 @@ function MouseInput(input) {
         that.x = e.clientX;
         that.y = e.clientY;
 
-        if (e.button > 0) {
+        if (e.button >= 0) {
             if (name == 'mousedown')
                 that["button" + e.button] = 1;
             if (name == 'mouseup')
