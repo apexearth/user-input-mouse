@@ -5,8 +5,7 @@ describe("user-input-mouse.js", function () {
 
     it("has default members", function () {
         var input = mouseInput()
-        expect(input.values).toExist()
-        expect(input.input).toExist()
+        expect(input._input).toExist()
     })
 
     it("reacts properly to mouse events", function () {
