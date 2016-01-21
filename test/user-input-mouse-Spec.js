@@ -11,7 +11,7 @@ describe("user-input-mouse.js", function () {
 
     it("reacts properly to mouse events", function () {
         var mouse      = mouseInput()
-        var innerInput = mouse.input
+        var innerInput = mouse._input
         innerInput.emit("mousemove", {
             clientX: 3,
             clientY: 4,
