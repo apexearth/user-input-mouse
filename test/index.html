@@ -6,26 +6,28 @@
 </head>
 <body style="background-color: #222">
 
-<div id="output" style="position: fixed; left: 50%; top: 20%; margin-left: -150px;
-                            width: 300px; background-color: #444;
+<div style="position: fixed; left: 50%; top: 20%; margin-left: -300px;
+                            width: 600px; background-color: #444;
                             color: #ccc; font-size: 18pt; padding: 20px;">
+    <pre>var mouse = window.mouseInput(document)</pre>
+    <pre id="output" style='margin: 0'></pre>
 </div>
 
 <script type="text/javascript">
     var mouse = window.mouseInput(document) // Default target is `document.body`
-    mouse.input.on("mousemove", handleMouseEvent)
-    mouse.input.on("mousedown", handleMouseEvent)
-    mouse.input.on("mouseup", handleMouseEvent)
-    mouse.input.on("wheel", handleMouseEvent)
+    mouse._input.on("mousemove", handleMouseEvent)
+    mouse._input.on("mousedown", handleMouseEvent)
+    mouse._input.on("mouseup", handleMouseEvent)
+    mouse._input.on("wheel", handleMouseEvent)
     function handleMouseEvent(e) {
-        document.getElementById("output").innerHTML = "<pre style='margin: 0'>" + e + "\n" + JSON.stringify({
+        document.getElementById("output").innerHTML = e + "\n" + JSON.stringify({
                     x:       mouse.x,
                     y:       mouse.y,
                     button0: mouse.button0,
                     button1: mouse.button1,
                     button2: mouse.button2,
                     wheel:   mouse.wheel
-                }, null, 2) + "</pre>"
+                }, null, 2)
     }
 </script>
 

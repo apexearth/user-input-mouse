@@ -1,6 +1,6 @@
 var util      = require("util")
 var mouse     = require("mouse-events")
-var UserInput = require("user-input")
+var EventEmitter = require("events").EventEmitter;
 
 var browser = require("./browser.js")
 
@@ -13,12 +13,13 @@ function mouseInput(target) {
 
 function MouseInput(input) {
     var that = this;
-    UserInput.call(this, input)
+    EventEmitter.call(this, input)
+    this._input = input
 
-    this.input.on('mousemove', handleMouseEvent.bind(this, 'mousemove'))
-    this.input.on('mousedown', handleMouseEvent.bind(this, 'mousedown'))
-    this.input.on('mouseup', handleMouseEvent.bind(this, 'mouseup'))
-    this.input.on('wheel', handleWheelEvent);
+    this._input.on('mousemove', handleMouseEvent.bind(this, 'mousemove'))
+    this._input.on('mousedown', handleMouseEvent.bind(this, 'mousedown'))
+    this._input.on('mouseup', handleMouseEvent.bind(this, 'mouseup'))
+    this._input.on('wheel', handleWheelEvent);
 
     function handleMouseEvent(name, e) {
         that.x = e.clientX;
@@ -45,4 +46,4 @@ function MouseInput(input) {
         }
     }
 }
-util.inherits(MouseInput, UserInput)
+util.inherits(MouseInput, EventEmitter)
