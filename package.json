@@ -1,7 +1,7 @@
 {
   "name": "user-input-mouse",
   "version": "0.0.1",
-  "description": "User input tracking for the mouse.",
+  "description": "Input tracking for the mouse.",
   "main": "src/user-input-mouse.js",
   "directories": {
     "test": "test"

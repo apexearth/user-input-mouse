@@ -1,5 +1,5 @@
-var util      = require("util")
-var mouse     = require("mouse-events")
+var util         = require("util")
+var mouse        = require("mouse-events")
 var EventEmitter = require("events").EventEmitter;
 
 var browser = require("./browser.js")
