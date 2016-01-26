@@ -20,7 +20,7 @@ When the user presses the left mouse button, `mouse` would contain the following
     {
         "x": 0,
         "y": 0,
-        "button0": 1
+        "mouse0": 1
     }
 
 When the user releases the left mouse button, and then presses the right mouse button, `mouse` would contain the following.
@@ -28,8 +28,8 @@ When the user releases the left mouse button, and then presses the right mouse b
     {
         "x": 0,
         "y": 0,
-        "button0": 0,
-        "button2": 1
+        "mouse0": 0,
+        "mouse2": 1
     }
 
 ## Tests

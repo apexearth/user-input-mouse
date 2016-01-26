@@ -21,12 +21,12 @@
     mouse._input.on("wheel", handleMouseEvent)
     function handleMouseEvent(e) {
         document.getElementById("output").innerHTML = e + "\n" + JSON.stringify({
-                    x:       mouse.x,
-                    y:       mouse.y,
-                    button0: mouse.button0,
-                    button1: mouse.button1,
-                    button2: mouse.button2,
-                    wheel:   mouse.wheel
+                    x:      mouse.x,
+                    y:      mouse.y,
+                    mouse0: mouse.mouse0,
+                    mouse1: mouse.mouse1,
+                    mouse2: mouse.mouse2,
+                    wheel:  mouse.wheel
                 }, null, 2)
     }
 </script>
