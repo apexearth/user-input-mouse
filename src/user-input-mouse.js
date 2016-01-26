@@ -26,9 +26,9 @@ function MouseInput(input) {
 
         if (e.button >= 0) {
             if (name == 'mousedown')
-                that["button" + e.button] = 1;
+                that["mouse" + e.button] = 1;
             if (name == 'mouseup')
-                that["button" + e.button] = 0;
+                that["mouse" + e.button] = 0;
         }
     }
 
@@ -40,7 +40,7 @@ function MouseInput(input) {
     function clear() {
         that.wheel = 0;
         for (var key in that) {
-            if (key.substring(0, 6) == "button")
+            if (key.substring(0, 5) == "mouse")
                 that[key] = 0
         }
     }
