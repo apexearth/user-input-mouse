@@ -51,13 +51,21 @@ describe("user-input-mouse.js", function () {
         expect(mouse.y).toEqual(8)
         expect(mouse.mouse1).toEqual(1)
         expect(mouse.wheel).toEqual(1.5)    // Shows value of last wheel event.
-
-        mouse.clear()                       // Clears wheel & button values.
-        expect(mouse.x).toEqual(7)
-        expect(mouse.y).toEqual(8)
-        expect(mouse.mouse1).toEqual(0)
-        expect(mouse.wheel).toEqual(0)
-
     })
 
+    it("can clear all values back to zero", function () {
+        var input = mouseInput()
+        input._input.emit("mousedown", {
+            clientX: 7,
+            clientY: 8,
+            button: 1
+        })
+        expect(input.x).toEqual(7)
+        expect(input.y).toEqual(8)
+        expect(input.mouse1).toEqual(1)
+        input.clear();
+        expect(input.x).toEqual(0)
+        expect(input.y).toEqual(0)
+        expect(input.mouse1).toEqual(0)
+    })
 })

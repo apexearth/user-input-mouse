@@ -1,10 +1,10 @@
-var util         = require("util")
-var mouse        = require("mouse-events")
+var util = require("util")
+var mouse = require("mouse-events")
 var EventEmitter = require("events").EventEmitter;
 
 var browser = require("./browser.js")
 
-module.exports            = mouseInput
+module.exports = mouseInput
 browser.window.mouseInput = mouseInput
 
 function mouseInput(target) {
@@ -41,7 +41,10 @@ function MouseInput(input) {
     function clear() {
         that.wheel = 0;
         for (var key in that) {
-            if (key.substring(0, 5) == "mouse")
+            if (key.substring(0, 5) == "mouse"
+                || key === 'x'
+                || key === 'y'
+                || key === 'wheel')
                 that[key] = 0
         }
     }
