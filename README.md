@@ -5,32 +5,34 @@
 ![](http://img.shields.io/npm/dm/user-input-mouse.svg?style=flat)
 ![](http://img.shields.io/npm/l/user-input-mouse.svg?style=flat)
 
-Base class for creating user inputs.
+Stores the latest state values received from mouse events.
 
-## Usage
+## Install
 
 [![NPM](https://nodei.co/npm/user-input-mouse.png)](https://nodei.co/npm/user-input-mouse/)
 
-### Examples
+### Usage
 
     var mouse = window.mouseInput(document)
 
-When the user presses the left mouse button, `mouse` would contain the following.
+When the user presses the left mouse button at coordinates (x100,y200), `mouse` would contain the following.
 
     {
-        "x": 0,
-        "y": 0,
+        "x": 100,
+        "y": 200,
         "mouse0": 1
     }
 
-When the user releases the left mouse button, and then presses the right mouse button, `mouse` would contain the following.
+When the user releases the left mouse button at (x110,y200), and then presses the right mouse button at (x200,y300), `mouse` would contain the following.
 
     {
-        "x": 0,
-        "y": 0,
+        "x": 200,
+        "y": 300,
         "mouse0": 0,
         "mouse2": 1
     }
+
+The values shown always represent the latest values received.
 
 ## Tests
 
