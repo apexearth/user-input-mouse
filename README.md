@@ -41,4 +41,4 @@ The values shown always represent the latest values received.
     - `npm test`
 - User Test
     - Test functionality in browser.
-    - `npm user-test`
+    - `npm run user-test`
