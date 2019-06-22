@@ -3,3 +3,4 @@ test
 .*ignore
 .travis.yml
 *.tgz
+build/
