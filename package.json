@@ -33,7 +33,7 @@
     "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-connect": "^2.0.0",
     "grunt-open": "^0.2.3",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "openurl": "^1.1.0"
   },
   "dependencies": {
